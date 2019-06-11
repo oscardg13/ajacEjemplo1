@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Uso Ajax</title>
+</head>
+<body>
+	<h1>AJAX</h1>
+	<div id="info"></div>	
+
+	<button onclick="ajax()">Ejecutar Ajax</button>
+	
+
+	<script>
+		function ajax(){
+			var ajaxRes= new XMLHttpRequest()
+			ajaxRes.onreadystatechange=function(){
+				if (ajaxRes.readyState ==4 && ajaxRes.status==200)
+					document.getElementById("info").innerHTML=ajaxRes.responseText
+			} 
+			ajaxRes.open("GET","pag.html",true)
+			ajaxRes.send()
+		}
+	</script>
+
+</body>
+</html>
